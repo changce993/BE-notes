@@ -1,0 +1,30 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/home.css">
+{{/section}}
+
+<main class="container">
+  <div class="header">
+    <h2 class="page-title">All notes</h2>
+    <a href="/notes/add" class="btn btn-primary">New note</a>
+  </div>
+
+  <div class="grid">
+    {{#each notes}}
+      <div class="card">
+        <p class="card-title">{{ this.title }}</p>
+        <p class="card-description">{{ this.description }}</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="/notes/edit/{{this._id}}">
+            edit
+          </a>
+          <form action="/notes/delete/{{this._id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-secondary">
+              delete
+            </button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</main>

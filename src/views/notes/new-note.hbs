@@ -1,0 +1,12 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/all-notes.css">
+{{/section}}
+
+<section>
+  <h2>New note</h2>
+  <form class="form" action="/notes/new-note" method="POST">
+    <input type="text" name="title" placeholder="Title">
+    <textarea type="text" name="description" placeholder="Description"></textarea>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</section>

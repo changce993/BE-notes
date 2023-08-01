@@ -1,0 +1,10 @@
+<main>
+  <h2>edit</h2>
+
+  <form action="/notes/edit/{{id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="text" name="title" placeholder="title" value="{{ title }}">
+    <textarea type="text" name="description" placeholder="description">{{ description }}</textarea>
+    <button class="btn btn-primary">Save</button>
+  </form>
+</main>
